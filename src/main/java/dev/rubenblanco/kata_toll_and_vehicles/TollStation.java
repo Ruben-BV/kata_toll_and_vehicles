@@ -10,8 +10,7 @@ public class TollStation {
     List<Vehicle> vehicleList;
 
 
-    
-    
+
     public TollStation(long tollStationId, String name, String city, double totalCollected, List<Vehicle> vehicleList) {
         this.tollStationId = tollStationId;
         this.name = name;
@@ -64,11 +63,6 @@ public class TollStation {
         return vehicleList;
     }
 
-
-    public void setVehicleList(List<Vehicle> vehicleList) {
-        this.vehicleList = vehicleList;
-    }
-
     public int calculateTollFee(Vehicle vehicle) {
     
         if(vehicle.getVehicleType().equals(VehicleType.car)){
@@ -77,11 +71,8 @@ public class TollStation {
         else if(vehicle.getVehicleType().equals(VehicleType.motorcycle)){
             return 50;
         }
-        else if(vehicle.getVehicleType().equals(VehicleType.truck)){
-            return vehicle.getNumberOfAxis()*50;
-        }
         else {
-            throw new IllegalArgumentException("Error: Tipo de vehículo desconocido: " + vehicle.getVehicleType());
+            return vehicle.getNumberOfAxis()*50;
         }
     }
 
