@@ -7,6 +7,9 @@ public class Vehicle {
     String licensePlate;
     int numberOfAxis;
     
+    public Vehicle() {
+    }
+
     public Vehicle(long vehicleId, VehicleType vehicleType, String licensePlate, int numberOfAxis) {
         this.vehicleId = vehicleId;
         this.vehicleType = vehicleType;
